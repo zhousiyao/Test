@@ -1,7 +1,7 @@
 name: flutter_plugin_upload_test
 description: A new Flutter plugin.
 version: 0.0.1
-homepage:
+homepage: https://github.com/zhousiyao/Test/tree/master/flutter_plugin_upload_test
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

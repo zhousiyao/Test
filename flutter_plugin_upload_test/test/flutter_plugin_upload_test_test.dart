@@ -20,4 +20,6 @@ void main() {
   test('getPlatformVersion', () async {
     expect(await FlutterPluginUploadTest.platformVersion, '42');
   });
+
+
 }

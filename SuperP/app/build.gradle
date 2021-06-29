@@ -48,4 +48,5 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     //Lifecycle
 //    implementation "androidx.lifecycle:lifecycle-*:2.4.0-alpha01"
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
 }

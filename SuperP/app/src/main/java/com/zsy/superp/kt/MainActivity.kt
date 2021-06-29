@@ -2,6 +2,7 @@ package com.zsy.superp.kt
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
@@ -66,4 +67,11 @@ class MainActivity : AppCompatActivity() {
             LogUtils.e("Resume")
         }
     }
+
+    fun toListAndRecycle(view: View) {
+
+
+    }
+
+    fun toInvalidateAndRequestLayout(view: View) {}
 }

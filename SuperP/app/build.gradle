@@ -52,6 +52,6 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     //---Coroutine---
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
-
+    //---Retrofit(OkHttp&Okio)---
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
 }

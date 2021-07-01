@@ -14,6 +14,7 @@ import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import kotlinx.coroutines.*
+import kotlin.time.days
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         lifecycle.addObserver(MainLifecycle())
 
         coroutineLearn()
-
 
 
     }
@@ -102,7 +102,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun toListAndRecycle(view: View) {
-
 
     }
 

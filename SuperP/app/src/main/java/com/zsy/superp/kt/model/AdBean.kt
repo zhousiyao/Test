@@ -1,4 +1,4 @@
-package com.zsy.superp.kt.bean
+package com.zsy.superp.kt.model
 
 class AdBean {
     var imageUrl: String? = null

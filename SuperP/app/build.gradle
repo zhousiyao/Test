@@ -44,9 +44,14 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     //Lifecycle
 //    implementation "androidx.lifecycle:lifecycle-*:2.4.0-alpha01"
-    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+    //---RxJava---
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    //---Coroutine---
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
+
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
 }

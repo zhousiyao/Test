@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.zsy.superp.R
+import org.junit.Test
 
 class RecycleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,15 +12,6 @@ class RecycleActivity : AppCompatActivity() {
         setContentView(R.layout.activity_recycle)
 
 //        findViewById<Button>(R.id.rv_view).setOnClickListener()
-        testFun({
-            "aaaa"
-        })
     }
-
-
-    @Synchronized fun testFun(aaaa:()-> String){
-
-    }
-
 
 }

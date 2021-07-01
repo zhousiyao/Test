@@ -13,6 +13,7 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,34 @@ class MainActivity : AppCompatActivity() {
 
         lifecycle.addObserver(MainLifecycle())
 
+        coroutineLearn()
+
+
+
+    }
+
+    private fun coroutineLearn() {
+        LogUtils.e("current thread ${Thread.currentThread().name}")
+
+//        coroutineTest()
+        GlobalScope.launch() {
+            delay(6000)
+
+            LogUtils.e("coroutine end coroutine thread ${Thread.currentThread().name}")
+        }
+
+        LogUtils.e("coroutine end")
+    }
+
+    private fun coroutineTest() = runBlocking {
+        LogUtils.e("coroutine thread ${Thread.currentThread().name}")
+        repeat(8){
+            LogUtils.e("repeat process ${it}")
+            delay(5000)
+        }
+    }
+
+    fun rxJava(){
         val observables: Observable<String?> =
             object : Observable<String?>() {
                 override fun subscribeActual(observer: @NonNull Observer<in String?>?) {
@@ -65,6 +94,10 @@ class MainActivity : AppCompatActivity() {
         @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
         fun onResumeForLifecycle(){
             LogUtils.e("Resume")
+        }
+        @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+        fun onCreateForLifecycle(){
+            LogUtils.e("onCreate")
         }
     }
 

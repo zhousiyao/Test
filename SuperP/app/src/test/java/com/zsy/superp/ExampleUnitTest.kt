@@ -51,5 +51,14 @@ class ExampleUnitTest {
 //            .subscribe(observers)
         val str : String? = null
         print("结果 = "+ (str.toString() == "null"))
+
+        println("测试 ${testFun{ i: Int, i1: Int ->
+            i + i1
+        }}")
+    }
+
+    @Synchronized
+    fun testFun(aa:(a:Int,b:Int)-> Int) : Int{
+        return (aa(1,2) + 100)
     }
 }

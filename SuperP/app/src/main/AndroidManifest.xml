@@ -13,16 +13,15 @@
         <activity android:name=".kt.activity.RecycleActivity" />
         <activity android:name=".kt.activity.ListViewActivity" />
         <activity android:name=".kt.activity.ListAndRecycleActivity" />
-        <activity android:name=".kt.view.WechatActivity">
+        <activity android:name=".kt.view.SecondActivity" />
+        <activity android:name=".kt.view.FirstActivity" />
+        <activity android:name=".kt.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".kt.view.SecondActivity" />
-        <activity android:name=".kt.view.FirstActivity" />
-        <activity android:name=".kt.MainActivity" />
     </application>
 
 </manifest>

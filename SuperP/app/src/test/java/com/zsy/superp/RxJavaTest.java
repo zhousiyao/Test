@@ -1,6 +1,15 @@
 package com.zsy.superp;
 
+import android.content.Context;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
 import org.junit.Test;
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
@@ -69,6 +78,23 @@ public class RxJavaTest {
 
                     }
                 });
+
+    }
+
+    public void listTest(Context context){
+        List<? extends  TextView> textList = new ArrayList<>();
+        TextView textView = new TextView(context);
+        Button button = new Button(context);
+        EditText editText = new EditText(context);
+//        textList.add(button);
+
+        List<Button> listButton = new ArrayList<>();
+        List<TextView> listTextView = new ArrayList<>();
+        List<EditText> listEditText = new ArrayList<>();
+        listTest2(listButton);
+    }
+
+    public void listTest2(List<? extends TextView> list){
 
     }
 

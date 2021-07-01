@@ -10,4 +10,6 @@ class RetrofitCoroutineDSL<T> {
     internal var onSuccess:((T) -> Unit)? = null
 
     internal var onError:(() -> Unit)? = null
+
+
 }

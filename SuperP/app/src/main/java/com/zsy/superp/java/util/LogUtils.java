@@ -1,6 +1,13 @@
 package com.zsy.superp.java.util;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LogUtils {
 
@@ -17,4 +24,5 @@ public class LogUtils {
     public static void e(String tag,String msg){
         if(mIsPrint) Log.e(tag,msg);
     }
+
 }

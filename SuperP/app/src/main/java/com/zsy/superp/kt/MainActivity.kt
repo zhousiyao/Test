@@ -32,14 +32,28 @@ class MainActivity : AppCompatActivity() {
         LogUtils.e("current thread ${Thread.currentThread().name}")
 
 //        coroutineTest()
-        GlobalScope.launch() {
-            delay(6000)
+//        GlobalScope.launch() {
+//            delay(6000)
+//
+//            LogUtils.e("coroutine end coroutine thread ${Thread.currentThread().name}")
+//        }
 
-            LogUtils.e("coroutine end coroutine thread ${Thread.currentThread().name}")
+        GlobalScope.launch(Dispatchers.Main){
+            suspandMethodTest()
         }
 
         LogUtils.e("coroutine end")
     }
+
+    private suspend fun suspandMethodTest(){
+
+        LogUtils.e("suspandMethod start")
+        withContext(Dispatchers.IO){
+            delay(3000)
+        }
+        LogUtils.e("suspandMethod end")
+    }
+
 
     private fun coroutineTest() = runBlocking {
         LogUtils.e("coroutine thread ${Thread.currentThread().name}")

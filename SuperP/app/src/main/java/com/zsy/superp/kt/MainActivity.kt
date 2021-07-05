@@ -1,12 +1,19 @@
 package com.zsy.superp.kt
 
+import android.content.ComponentName
+import android.content.Context
+import android.content.Intent
+import android.content.ServiceConnection
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.IBinder
 import android.view.View
+import android.widget.Chronometer
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import com.zsy.superp.R
+import com.zsy.superp.kt.test.TestService
 import com.zsy.superp.kt.util.LogUtils
 import io.reactivex.rxjava3.annotations.NonNull
 import io.reactivex.rxjava3.core.Observable
@@ -24,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         lifecycle.addObserver(MainLifecycle())
 
         coroutineLearn()
-
 
     }
 
@@ -103,21 +109,58 @@ class MainActivity : AppCompatActivity() {
     class MainLifecycle : LifecycleObserver{
         @OnLifecycleEvent(Lifecycle.Event.ON_START)
         fun onStartForLifecycle(){
-            LogUtils.e("Start")
+            LogUtils.e("Main onStart")
         }
         @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
         fun onResumeForLifecycle(){
-            LogUtils.e("Resume")
+            LogUtils.e("Main onResume")
         }
         @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
         fun onCreateForLifecycle(){
-            LogUtils.e("onCreate")
+            LogUtils.e("Main onCreate")
+        }
+        @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+        fun onPauseForLifecycle(){
+            LogUtils.e("Main onPause")
+        }
+        @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+        fun onStopForLifecycle(){
+            LogUtils.e("Main onStop")
         }
     }
 
-    fun toListAndRecycle(view: View) {
-
+    fun toStartActivity(view: View) {
+        startActivity(Intent(this,LoginActivity::class.java))
     }
 
-    fun toInvalidateAndRequestLayout(view: View) {}
+    fun toStartService(view: View) {
+
+        startService(Intent(this,TestService::class.java))
+    }
+
+    fun toBindService(view: View) {
+        LogUtils.e("toBindService")
+        bindService(Intent(this,TestService::class.java), object:ServiceConnection{
+            override fun onServiceDisconnected(name: ComponentName?) {
+                LogUtils.e("onServiceDisconnected")
+            }
+
+            override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+                LogUtils.e("onServiceConnected")
+            }
+
+        }, Context.BIND_AUTO_CREATE)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        LogUtils.e("onStart onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        LogUtils.e("onResume onResume")
+    }
+
+
 }

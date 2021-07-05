@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.RecyclerView
 import com.zsy.superp.R
 import com.zsy.superp.kt.util.LogUtils
 
@@ -14,6 +15,8 @@ class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first)
+
+        findViewById<RecyclerView>(R.id.rv_view)
     }
 
     override fun onStart() {

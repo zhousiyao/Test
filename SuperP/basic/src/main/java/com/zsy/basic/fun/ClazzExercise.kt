@@ -5,6 +5,7 @@ class ClazzExercise {
     //默认class 是 final的
     //如果想要 ClazzExercise可被继承
     // open class ClazzExercise
+    lateinit var a:String
 
     open class A{
 

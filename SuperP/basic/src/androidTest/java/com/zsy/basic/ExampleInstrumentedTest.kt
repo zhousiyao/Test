@@ -1,5 +1,6 @@
 package com.zsy.basic
 
+import android.util.Log
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 
@@ -22,6 +23,7 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.zsy.basic.test", appContext.packageName)
         print("AAAAAA")
+        Log.d("testtest","测试日志")
         val nums = listOf(1,2,4,3,6)
 
         nums.filter { it >0 }
@@ -35,5 +37,10 @@ class ExampleInstrumentedTest {
                 println()
             }
 
+    }
+
+    @Test
+    fun startTest() {
+        print("AAAAAA")
     }
 }

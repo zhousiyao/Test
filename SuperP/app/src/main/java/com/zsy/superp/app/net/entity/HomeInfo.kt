@@ -16,6 +16,16 @@ data class HomeInfo(var count:Int,
                     var refreshCount:Int,
                     var lastStartId:Int,
                     var itemList: MutableList<Content>) : Serializable
+
+//更多信息
+data class MoreInfo(var nextPageUrl: String?,
+                        var date: Long,
+                        var nextPublishTime: Long,
+                        var topIssue: TopIssue,
+                        var refreshCount: Int,
+                        var lastStartId: Int,
+                        var issueList: MutableList<ContentBean>) : Serializable
+
 //顶部轮播内容
 data class TopIssue(var type: String,
                     var data: TopIssueBean,
@@ -101,6 +111,40 @@ data class FollowInfo(var itemType: String,
 data class Label(var text: String,
                  var card: String,
                  var detail: String) : Serializable
+
+data class Tab(var tabInfo: TabInfo,
+               var pgcInfo: PgcInfo) : Serializable
+
+data class TabInfo(var tabList: MutableList<TabDetailInfo>,
+                   var defaultIdx: Int) : Serializable
+
+data class TabDetailInfo(var id: Int,
+                         var name: String,
+                         var apiUrl: String) : Serializable
+
+data class PgcInfo(var dataType: String,
+                   var id: Int,
+                   var icon: String,
+                   var name: String,
+                   var brief: String,
+                   var description: String,
+                   var actionUrl: String,
+                   var followCount: Int,
+                   var shareCount: Int,
+                   var videoCount: Int,
+                   var collectCount: Int,
+                   var followInfo: FollowInfo) : Serializable
+
+data class Category(var categoryInfo: CategoryInfo,
+                    var tabInfo: TabInfo)
+
+data class CategoryInfo(var dataType: String,
+                        var id: String,
+                        var name: String,
+                        var description: String,
+                        var headerImage: String,
+                        var actionUrl: String,
+                        var followInfo: FollowInfo)
 
 /*------------------------------------------------------Bean------------------------------------------------------------------*/
 

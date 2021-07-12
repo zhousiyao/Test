@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SuperP">
+        <activity android:name=".app.ui.main.MainActivity"></activity>
         <activity
             android:name=".kt.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
         <activity android:name=".kt.activity.InvalidateAndRequestLayoutActivity" />
         <activity android:name=".kt.activity.RecycleActivity" />
         <activity android:name=".kt.activity.ListViewActivity" />
@@ -26,8 +27,7 @@
             </intent-filter>
         </activity>
 
-
-        <service android:name=".kt.test.TestService"/>
+        <service android:name=".kt.test.TestService" />
     </application>
 
 </manifest>

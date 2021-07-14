@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SuperP">
-        <activity android:name=".app.ui.main.MainActivity"></activity>
+        <activity android:name=".app.ui.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".kt.LoginActivity"
             android:label="@string/title_activity_login" />
@@ -20,11 +26,7 @@
         <activity android:name=".kt.view.SecondActivity" />
         <activity android:name=".kt.view.FirstActivity" />
         <activity android:name=".kt.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service android:name=".kt.test.TestService" />

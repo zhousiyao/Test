@@ -14,5 +14,9 @@ abstract class Observable<T> : ObservableSource<T> {
 
     companion object{
 
+        @JvmStatic
+        fun<T> create(observableOnSubscribe: ObservableOnSubscribe<T>):Observable<T>{
+            return ObservableCreate(observableOnSubscribe)
+        }
     }
 }

@@ -1,6 +1,6 @@
 package com.zsy.superp.kt.rxjava
 
-class ObservableCreate<T>(val source : ObservableOnSubscribe<T>) : Observable<T>() {
+class ObservableCreate<T>(private val source : ObservableOnSubscribe<T>) : Observable<T>() {
 
     override fun subscribeAbstract(observer: Observer<T>) {
         observer.onSubscribe()

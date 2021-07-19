@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        lifecycle.addObserver(MainLifeCycle())
+//        lifecycle.addObserver(MainLifeCycle())
     }
 }
